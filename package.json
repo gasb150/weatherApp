@@ -1,0 +1,29 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gasb150/weatherApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gasb150/weatherApp/issues"
+  },
+  "homepage": "https://github.com/gasb150/weatherApp#readme",
+  "devDependencies": {
+    "webpack-cli": "^4.6.0"
+  },
+  "dependencies": {
+    "bulma": "^0.9.2",
+    "webpack": "^5.31.0"
+  },
+  "main": "webpack.config.js"
+}
