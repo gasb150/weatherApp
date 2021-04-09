@@ -1,5 +1,5 @@
-import getInfo from './api'
-
+import getInfo from './apiWeather'
+import location from './apiLocation'
 const loadPage = (() => {
     async function load() {
         const cityName = document.getElementById('cityName')
@@ -12,7 +12,9 @@ const loadPage = (() => {
         const data = await getInfo().then((response => {
             cityName.innerHTML = response.name
             countryName.innerHTML = response.sys.country
-            temp.innerHTML = response.main.temp
+            temp.innerHTML = (response.main.temp)
+            const mainTemp = response.main.temp
+           
             tempFeel.innerHTML = response.main.feels_like
             humidity.innerHTML = response.main.humidity
             desc.innerHTML = response.weather[0].description
