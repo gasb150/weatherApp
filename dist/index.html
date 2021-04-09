@@ -1,60 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeatherApp</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeatherApp</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
 </head>
+
 <body>
-    <section class="section columns is-centered is-vcentered">
+  <section class="section columns is-centered is-vcentered">
     <div class="card column is-half">
-        <div class="container">
-          <h1 class="title" style="color: blue;">
-            Weather<span style="color: red;">App</span>
-          </h1>
-          <p class="subtitle">
-            Check the weather in <strong>any city</strong>!
-          </p>
+      <div class="container columns is-centered" id="status"> </div>
+      <div class="container">
+        <h1 class="title" style="color: blue;">
+          Weather<span style="color: red;">App</span>
+        </h1>
+        <p class="subtitle">
+          Check the weather in <strong>any city</strong>!
+        </p>
+      </div>
+      <div class="container">
+        <div class="field">
+          <label class="label">City Name</label>
+          <div id="error" class="has-text-danger">
+
+          </div>
+          <div class="control">
+            <input id="cityInput" class="input" type="text" placeholder="e.g. Cartagena">
+
+          </div>
         </div>
-        <div class="container">
-            <div class="field">
-                <label class="label">City Name</label>
-                <div class="control">
-                  <input id="cityInput" class="input" type="text" placeholder="e.g. Cartagena">
-                </div>
-              </div>
-              <div class="field is-grouped">
-                <div class="control">
-                  <button id="search" class="button is-link">Search</button>
-                </div>
-              </div>
+        <div class="field is-grouped">
+          <div class="control">
+            <button id="search" class="button is-link">Search</button>
+          </div>
         </div>
-        <div class="container">
-            <div class="columns">
-                <div class="column">
-                <h2 class="title" id="cityName"></h2>
-                <p id="countryName"></p>
-                </div>
-                <div class="column columns">
-                    <div class="column">
-                        <p id="tempAct"></p>
-                       
-                        <p id="tempFeel"></p>
-                    </div>
-                    <div class="column">
-                        <p id="wind"></p>
-                        <p id="desc"></p>
-                        <p id='humidity'></p>
-                    </div>
-                </div>
+      </div>
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <h2 class="title" id="cityName"></h2>
+
+            <p id="countryName"></p>
+          </div>
+          <div class="column columns">
+            <div class="column" id="infoDisplayed">
+              <p>Temp
+                <span id="tempAct"></span>
+              </p>
+              <p>Feels like
+                <span id="tempFeel"></span>
+              </p>
+             <div id = "buttonPosition">
+
+             </div>
             </div>
+            <div class="column">
+
+              <p><span id="wind"></span></p>
+              <p><span id="desc"></span></p>
+              <p><span id='humidity'></span></p>
+            </div>
+          </div>
         </div>
-        </div>
-      </section>
+      </div>
+    </div>
+
+  </section>
 
 
-    <script src="main.js"> </script>
+  <script src="main.js"> </script>
 </body>
+
 </html>
