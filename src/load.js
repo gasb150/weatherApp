@@ -20,7 +20,7 @@ const loadPage = (() => {
 
         const locData = await location().then((response=>{
             const cityName = response.city
-            console.log(cityName)
+          
             return cityName
         }))
        if (cityInput ===null){
@@ -84,17 +84,17 @@ function switchTemperature(data){
     const temp = document.getElementById('tempAct')
     const tempFeel = document.getElementById('tempFeel')
         switchT.addEventListener("click", () =>{
-            console.log(switchT.innerHTML)
+       
 
             if(switchT.innerHTML === '°F'){
                 switchT.innerHTML = '°C'
               
-                console.log('yyy')
+                
                 temp.innerHTML = `${Math.round( tempValue*9/5 -459.67 )}°F`
                 tempFeel.innerHTML = `${Math.round( tempFeelValue*9/5 -459.67  )}°F`
               
             } else {
-               console.log('kkk')
+            
                 temp.innerHTML = `${Math.round( tempValue - 273.15, -1)}°C`
                 tempFeel.innerHTML = `${Math.round( tempFeelValue - 273.15, -2)}°C`
                 switchT.innerHTML = '°F'

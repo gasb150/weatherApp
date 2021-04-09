@@ -19,6 +19,6 @@ export default function stickers (data) {
     } else if (status <= 804) {
    url = 'https://media3.giphy.com/media/fqhdKisO8aPdXVZKH4/giphy.gif?cid=ecf05e47rn7efxu47wvcbds0u08a9id6uw1j8o2lu6pu87d3&rid=giphy.gif'
     }
-   console.log(status)
+  
    return url
 }

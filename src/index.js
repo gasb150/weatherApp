@@ -4,7 +4,7 @@
 
 import loadPage from './load'
 
-console.log(loadPage)
+
 
 
 loadPage.load()
