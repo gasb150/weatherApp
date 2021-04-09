@@ -22,9 +22,3 @@ export default function stickers (data) {
    console.log(status)
    return url
 }
-
-
-//
-// https://giphy.com/stickers/storm-lightning-thunder-XUQrufWHU1ThHweX89
-// https://giphy.com/stickers/hujan-tilusoca-failurtalent-W7XUi13E6TLdAst9yZ
-// https://giphy.com/stickers/thunder-thunderstorm-studioneuhaus-SU3SbAI9XzlGNNudLK
