@@ -23,6 +23,7 @@ const loadPage = (() => {
 
         const locData = await location().then((response=>{
             const cityName = response.city
+            console.log(cityName)
             return cityName
         }))
        if (cityInput ===null){
