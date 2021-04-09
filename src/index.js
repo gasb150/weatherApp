@@ -44,12 +44,17 @@ const loadPage = (() => {
         const tempValue = data.main.temp
        
         const tempFeelValue = data.main.feels_like
+        let dataIcon=''
+        if (tempValue < 278.15 ){
+            dataIcon = "carbon:temperature-frigid"
+        } else if (tempValue > 299.15){
+            dataIcon = "carbon:temperature-hot"
+        } else {
+            dataIcon = "uil:temperature-half"
+        }
 
-        
-
-
-        temp.innerHTML = `${Math.round( tempValue - 273.15, -1)}°C`
-        tempFeel.innerHTML = `${Math.round( tempFeelValue - 273.15, -2)}°C`
+        temp.innerHTML = ` <span class="iconify" data-icon=${dataIcon} data-inline="false"></span> ${ Math.round( tempValue - 273.15, -1)}°C`
+        tempFeel.innerHTML = ` <span class="iconify" data-icon=${dataIcon} data-inline="false"></span> ${Math.round( tempFeelValue - 273.15, -2)}°C`
         // <button id="switchT" class="button is-link">°F</button>
         const infoDisplayed = document.getElementById('buttonPosition')
         infoDisplayed.innerHTML = ''
@@ -62,8 +67,8 @@ const loadPage = (() => {
         switchTemperature(data, switchT)
         
 
-        wind.innerHTML = `${data.wind.speed} m/s`
-        humidity.innerHTML = `${data.main.humidity}%`
+        wind.innerHTML = `<span class="iconify" data-icon="tabler:wind" data-inline="false"></span> ${data.wind.speed} m/s`
+        humidity.innerHTML = `<span class="iconify" data-icon="carbon:humidity" data-inline="false"></span> ${data.main.humidity}%`
         desc.innerHTML = `<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}.png"> </img> ${data.weather[0].description}`
    
         }
