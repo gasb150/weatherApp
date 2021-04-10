@@ -1,6 +1,6 @@
 import location from './apiLocation';
 
-import * as imgUrl from './icons/load.gif';
+import * as imgUrl from '../icons/load.gif';
 import getInfo from './apiWeather';
 import stickers from './stickers';
 
@@ -57,7 +57,7 @@ const loadPage = (() => {
       infoDisplayed.innerHTML = '';
       const switchT = document.createElement('button');
       switchT.id = 'switchT';
-      switchT.innerHTML = '°F';
+      switchT.innerHTML = 'To °F';
       switchT.classList.add('button', 'is-link');
       infoDisplayed.appendChild(switchT);
 
@@ -79,8 +79,8 @@ function switchTemperature(data, switchT) {
   const temp = document.getElementById('tempAct');
   const tempFeel = document.getElementById('tempFeel');
   switchT.addEventListener('click', () => {
-    if (switchT.innerHTML === '°F') {
-      switchT.innerHTML = '°C';
+    if (switchT.innerHTML === 'To °F') {
+      switchT.innerHTML = 'To °C';
 
 
       temp.innerHTML = `${Math.round(((tempValue * 9) / 5) - 459.67)}°F`;
@@ -88,7 +88,7 @@ function switchTemperature(data, switchT) {
     } else {
       temp.innerHTML = `${Math.round(tempValue - 273.15, -1)}°C`;
       tempFeel.innerHTML = `${Math.round(tempFeelValue - 273.15, -2)}°C`;
-      switchT.innerHTML = '°F';
+      switchT.innerHTML = 'To °F';
     }
   });
 }

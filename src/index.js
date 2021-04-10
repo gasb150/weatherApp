@@ -1,5 +1,5 @@
 
-import loadPage from './load';
+import loadPage from './modules/load';
 
 
 loadPage.load();
