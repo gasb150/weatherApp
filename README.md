@@ -35,7 +35,8 @@ in your terminal to run the project locally
 - Javascript
 - Bulma
 - Webpack
-- API 
+- API OpenWeather
+- ipapi
 
 ## Authors
 
