@@ -1,106 +1,95 @@
-import location from './apiLocation'
+import location from './apiLocation';
 
-import * as imgUrl from '../src/icons/load.gif'
-import getInfo from './apiWeather'
-import stickers from './stickers'
+import * as imgUrl from './icons/load.gif';
+import getInfo from './apiWeather';
+import stickers from './stickers';
+
 const loadPage = (() => {
+  async function load(cityInput = null) {
+    if (cityInput === '') {
+      cityInput = null;
+    }
+    const status = document.getElementById('status');
+    const cityName = document.getElementById('cityName');
+    const countryName = document.getElementById('countryName');
+    const temp = document.getElementById('tempAct');
+    const tempFeel = document.getElementById('tempFeel');
+    const humidity = document.getElementById('humidity');
+    const desc = document.getElementById('desc');
+    const wind = document.getElementById('wind');
 
-    async function load(cityInput=null) {
-        if (cityInput === '') {
-            cityInput = null
-        }
-        const status = document.getElementById('status')
-        const cityName = document.getElementById('cityName')
-        const countryName = document.getElementById('countryName')
-        const temp = document.getElementById('tempAct')
-        const tempFeel = document.getElementById('tempFeel')
-        const humidity = document.getElementById('humidity')
-        const desc = document.getElementById('desc')
-        const wind = document.getElementById('wind')
+    const locData = await location().then((response => {
+      const cityName = response.city;
 
-        const locData = await location().then((response=>{
-            const cityName = response.city
-          
-            return cityName
-        }))
-       if (cityInput ===null){
-        cityInput = locData
-       }
-       
-       status.innerHTML = `<div class="content"> <img  src="${imgUrl.default}"></img> <h1 class="title">Loading . . .</h1> </div>`
-        const data = await getInfo(cityInput)
-        const divError = document.getElementById('error')
-        if (data.message != undefined){
-            divError.innerHTML = data.message
-           
-        } else {
-        cityName.innerHTML = data.name
-        countryName.innerHTML = data.sys.country
-        let tempImg = ''
-        status.innerHTML = `<img class="" src="${stickers(data)}"></img>`
+      return cityName;
+    }));
+    if (cityInput === null) {
+      cityInput = locData;
+    }
 
-        const tempValue = data.main.temp
-       
-        const tempFeelValue = data.main.feels_like
-        let dataIcon=''
-        if (tempValue < 278.15 ){
-            dataIcon = "carbon:temperature-frigid"
-        } else if (tempValue > 299.15){
-            dataIcon = "carbon:temperature-hot"
-        } else {
-            dataIcon = "uil:temperature-half"
-        }
+    status.innerHTML = `<div class="content"> <img  src="${imgUrl.default}"></img> <h1 class="title">Loading . . .</h1> </div>`;
+    const data = await getInfo(cityInput);
+    const divError = document.getElementById('error');
+    if (data.message !== undefined) {
+      divError.innerHTML = data.message;
+    } else {
+      cityName.innerHTML = data.name;
+      countryName.innerHTML = data.sys.country;
+      const tempImg = '';
+      status.innerHTML = `<img class="" src="${stickers(data)}"></img>`;
 
-        temp.innerHTML = ` <span class="iconify" data-icon=${dataIcon} data-inline="false"></span> ${ Math.round( tempValue - 273.15, -1)}°C`
-        tempFeel.innerHTML = ` <span class="iconify" data-icon=${dataIcon} data-inline="false"></span> ${Math.round( tempFeelValue - 273.15, -2)}°C`
+      const tempValue = data.main.temp;
 
-        const infoDisplayed = document.getElementById('buttonPosition')
-        infoDisplayed.innerHTML = ''
-        const switchT = document.createElement('button')
-        switchT.id="switchT"
-        switchT.innerHTML="°F"
-        switchT.classList.add("button", "is-link")
-        infoDisplayed.appendChild(switchT)
+      const tempFeelValue = data.main.feels_like;
+      let dataIcon = '';
+      if (tempValue < 278.15) {
+        dataIcon = 'carbon:temperature-frigid';
+      } else if (tempValue > 299.15) {
+        dataIcon = 'carbon:temperature-hot';
+      } else {
+        dataIcon = 'uil:temperature-half';
+      }
 
-        switchTemperature(data, switchT)
-        
+      temp.innerHTML = ` <span class="iconify" data-icon=${dataIcon} data-inline="false"></span> ${Math.round(tempValue - 273.15, -1)}°C`;
+      tempFeel.innerHTML = ` <span class="iconify" data-icon=${dataIcon} data-inline="false"></span> ${Math.round(tempFeelValue - 273.15, -2)}°C`;
 
-        wind.innerHTML = `<span class="iconify" data-icon="tabler:wind" data-inline="false"></span> ${data.wind.speed} m/s`
-        humidity.innerHTML = `<span class="iconify" data-icon="carbon:humidity" data-inline="false"></span> ${data.main.humidity}%`
-        desc.innerHTML = `<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}.png"> </img> ${data.weather[0].description}`
-   
-        }
-        
-    
- } return {
-        load
-    };
-})()
-function switchTemperature(data){
+      const infoDisplayed = document.getElementById('buttonPosition');
+      infoDisplayed.innerHTML = '';
+      const switchT = document.createElement('button');
+      switchT.id = 'switchT';
+      switchT.innerHTML = '°F';
+      switchT.classList.add('button', 'is-link');
+      infoDisplayed.appendChild(switchT);
 
-    const tempValue = data.main.temp
-    const tempFeelValue = data.main.feels_like
-    
-    const temp = document.getElementById('tempAct')
-    const tempFeel = document.getElementById('tempFeel')
-        switchT.addEventListener("click", () =>{
-       
+      switchTemperature(data, switchT);
 
-            if(switchT.innerHTML === '°F'){
-                switchT.innerHTML = '°C'
-              
-                
-                temp.innerHTML = `${Math.round( tempValue*9/5 -459.67 )}°F`
-                tempFeel.innerHTML = `${Math.round( tempFeelValue*9/5 -459.67  )}°F`
-              
-            } else {
-            
-                temp.innerHTML = `${Math.round( tempValue - 273.15, -1)}°C`
-                tempFeel.innerHTML = `${Math.round( tempFeelValue - 273.15, -2)}°C`
-                switchT.innerHTML = '°F'
-            }
-        
-        
-        })
+
+      wind.innerHTML = `<span class="iconify" data-icon="tabler:wind" data-inline="false"></span> ${data.wind.speed} m/s`;
+      humidity.innerHTML = `<span class="iconify" data-icon="carbon:humidity" data-inline="false"></span> ${data.main.humidity}%`;
+      desc.innerHTML = `<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}.png"> </img> ${data.weather[0].description}`;
+    }
+  } return {
+    load,
+  };
+})();
+function switchTemperature(data, switchT) {
+  const tempValue = data.main.temp;
+  const tempFeelValue = data.main.feels_like;
+
+  const temp = document.getElementById('tempAct');
+  const tempFeel = document.getElementById('tempFeel');
+  switchT.addEventListener('click', () => {
+    if (switchT.innerHTML === '°F') {
+      switchT.innerHTML = '°C';
+
+
+      temp.innerHTML = `${Math.round(((tempValue * 9) / 5) - 459.67)}°F`;
+      tempFeel.innerHTML = `${Math.round(((tempFeelValue * 9) / 5) - 459.67)}°F`;
+    } else {
+      temp.innerHTML = `${Math.round(tempValue - 273.15, -1)}°C`;
+      tempFeel.innerHTML = `${Math.round(tempFeelValue - 273.15, -2)}°C`;
+      switchT.innerHTML = '°F';
+    }
+  });
 }
-export default loadPage
+export default loadPage;

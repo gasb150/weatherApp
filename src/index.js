@@ -1,25 +1,13 @@
 
+import loadPage from './load';
 
 
+loadPage.load();
 
-import loadPage from './load'
+const searchBtn = document.getElementById('search');
 
+searchBtn.addEventListener('click', () => {
+  const cityInput = document.getElementById('cityInput').value;
 
-
-
-loadPage.load()
-
-const searchBtn = document.getElementById('search')
-
-searchBtn.addEventListener("click", () =>{
-    const cityInput = document.getElementById('cityInput').value
- 
-    loadPage.load(cityInput)
-    
-  
-})
-
-
-
-
-
+  loadPage.load(cityInput);
+});
