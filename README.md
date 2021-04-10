@@ -50,7 +50,7 @@ in your terminal to run the project locally
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/gasb150/weatherApp/issues).
 
 ## Show your support
 
