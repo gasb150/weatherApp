@@ -2,7 +2,7 @@
 
 ## About
 
-This project is a wheather web application where useres searching cities can see differents weather conditions likes: temperatures, wind speed, clouds status, humidity. Also could change between °F and °C. 
+This project is a weather web application where users searching cities can see differents weather conditions likes: temperatures, wind speed, clouds status, humidity. Also could change between °F and °C.
 
 ![SCREENSHOT](./src/images/app_screenshot.png)
 
