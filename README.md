@@ -4,7 +4,7 @@
 
 This project is a wheather web application where useres searching cities can see differents weather conditions likes: temperatures, wind speed, clouds status, humidity. Also could change between °F and °C. 
 
-![SCREENSHOT](app_screenshot.png)
+![SCREENSHOT](./src/images/app_screenshot.png)
 
 ## Live demo
 
@@ -42,9 +42,9 @@ in your terminal to run the project locally
 
 👤 **Gustavo Sanmartin** :bird:
 
-- GitHub: [@icebox827](https://github.com/gasb150)
-- Twitter: [@heracles2k5](https://twitter.com/7aves)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/gustavsanmartin/)
+- GitHub: [@gasb150](https://github.com/gasb150)
+- Twitter: [@7aves](https://twitter.com/7aves)
+- LinkedIn: [Gustavo Sanmartin](https://www.linkedin.com/in/gustavsanmartin/)
 
 ## 🤝 Contributing
 
