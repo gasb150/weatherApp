@@ -8,8 +8,7 @@ This project is a weather web application where users searching cities can see d
 
 ## Live demo
 
-[clik here!](https://rawcdn.githack.com/gasb150/to-do-list/e19725ad01f5a75a7ecafa980e4e6b6e18881896/dist/index.html
-)
+[clik here!](https://rawcdn.githack.com/gasb150/weatherApp/b6ca3ff60038c8cf60d6df4906631bd206fadb50/dist/index.html)
 
 ## 🔨 Tested with
 
