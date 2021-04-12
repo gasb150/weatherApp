@@ -30,6 +30,7 @@ const loadPage = (() => {
     status.innerHTML = `<div class="content"> <img  src="${imgUrl.default}"></img> <h1 class="title">Loading . . .</h1> </div>`;
     const data = await getInfo(cityInput);
     const divError = document.getElementById('error');
+    divError.innerHTML = ''
     if (data.message !== undefined) {
       divError.innerHTML = data.message;
     } else {
