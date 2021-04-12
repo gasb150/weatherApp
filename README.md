@@ -3,6 +3,8 @@
 ## About
 
 This project is a weather web application where users searching cities can see differents weather conditions likes: temperatures, wind speed, clouds status, humidity. Also could change between °F and °C.
+The application can see your IP location and automatically render the information.
+Has different gif according to the actual cloud status.
 
 ![SCREENSHOT](./src/images/app_screenshot.png)
 
