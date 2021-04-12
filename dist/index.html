@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeatherApp</title>
+  <link rel="stylesheet" href="../src/styel.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+  
+</head>
+
+<body>
+  <section class="section columns is-centered is-vcentered">
+    
+    <div class="card column is-half">
+      <h1 class="title has-text-link-dark">
+        Weather<span class = "title-red">App<span class="iconify" data-icon="ri:sun-foggy-line" data-inline="false"></span></span>
+      </h1>
+      <div class="container columns is-centered" id="status"> </div>
+      <div class="container">
+        
+        <p class="subtitle">
+          Check the weather in <strong>any city</strong>!
+        </p>
+      </div>
+      <div class="container">
+        <div class="field">
+          <label class="label">City Name</label>
+          <div id="error" class="has-text-danger">
+
+          </div>
+          <div class="control">
+            <input id="cityInput" class="input" type="text" placeholder="e.g. Cartagena">
+
+          </div>
+        </div>
+        <div class="field is-grouped">
+          <div class="control">
+            <button id="search" class="button is-link">Search</button>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="columns">
+          <div class="column is-two-fifths
+
+          ">
+            <h2 class="title" id="cityName"></h2>
+
+            <p id="countryName"></p>
+          </div>
+          <div class="column columns">
+            <div class="column" id="infoDisplayed">
+              <p>Temp
+                <span id="tempAct"></span>
+              </p>
+              <p>Feels like
+                <span id="tempFeel"></span>
+              </p>
+             <div id = "buttonPosition">
+
+             </div>
+            </div>
+            <div class="column">
+
+              <p><span id="wind"></span></p>
+              <p><span id="desc"></span></p>
+              <p><span id='humidity'></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>WheaterApp</strong> by <a href="https://gasb150.me">Gustavo Sanmartin</a>.
+      </p>
+    </div>
+  </footer>
+
+
+  <script src="main.js"> </script>
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+</body>
+
+</html>
