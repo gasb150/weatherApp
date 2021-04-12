@@ -12,11 +12,11 @@ searchBtn.addEventListener('click', () => {
   loadPage.load(cityInput);
 });
 
-const searchForm = document.getElementById('cityInput')
+const searchForm = document.getElementById('cityInput');
 searchForm.addEventListener('keypress', (e) => {
-  if (e.key==='Enter'){
-  const cityInput = document.getElementById('cityInput').value;
+  if (e.key === 'Enter') {
+    const cityInput = document.getElementById('cityInput').value;
 
-  loadPage.load(cityInput);
+    loadPage.load(cityInput);
   }
 });
