@@ -23,12 +23,13 @@
     "dotenv-webpack": "^7.0.2",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
-    "webpack-cli": "^4.6.0"
+    "webpack": "^5.31.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
     "bulma": "^0.9.2",
-    "dotenv": "^8.2.0",
-    "webpack": "^5.31.0"
+    "dotenv": "^8.2.0"
   },
   "main": "webpack.config.js"
 }
