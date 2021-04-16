@@ -3,7 +3,7 @@
 ## About
 
 This project is a weather web application where users searching cities can see differents weather conditions likes: temperatures, wind speed, clouds status, humidity. Also could change between °F and °C.
-The application can see your IP location and automatically render the information.
+The application can see your IP location and render the information.
 Has different gif according to the actual cloud status.
 
 ![SCREENSHOT](./src/images/app_screenshot.png)
@@ -27,7 +27,7 @@ git clone https://github.com/gasb150/to-do-list
 ```
 npm run build
 ```
-in your terminal to run the project locally
+in your terminal to run the project 
 
 ## 🔨 Build With
 
